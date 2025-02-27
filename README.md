@@ -29,3 +29,30 @@ The UMBRELA framework provides a zero-shot, structured prompting approach for ge
 ├── run_command.sh # Example script for running the evaluation 
 └── README.md # Project documentation
 ```
+
+Command Example
+
+```
+python src/main.py \
+  --model_id "<MODEL_ID>" \
+  --test_qrel_path "<PATH_TO_QREL_FILE>" \
+  --queries_path "<PATH_TO_QUERIES_FILE>" \
+  --docs_path "<PATH_TO_DOCUMENTS_FILE>" \
+  --prompt_mode "<PROMPT_MODE>" \
+  --result_file_path "<OUTPUT_RESULT_FILE>" \
+  -together (Only if you want to run a model with Together AI API )
+```
+
+Example of usage
+```
+python src/main.py \
+  --model_id "deepseek-ai/DeepSeek-V3" \
+  --test_qrel_path "./data/dl2020/2020qrels-pass.txt" \
+  --queries_path "./data/dl2020/msmarco-test2020-queries.tsv" \
+  --docs_path "./data/dl2020/dl2020_document.jsonl" \
+  --prompt_mode "zeroshot_bing" \
+  --result_file_path "./results/dl20_test_zeroshot_bing_DSV3.txt" \
+  -together
+
+
+```
